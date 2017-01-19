@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<!--view是wxml中最基本的一种视图容器，可以理解为div-->
+<view class="container">
+  <!--bindtap类似于vue里的v-on:click，用于处理页面元素的事件绑定-->
+  <view  bindtap="bindViewTap" class="userinfo">
+  <!--{{userInfo.avatarUrl}}这类的双花括号和vue一样，用来显示js中的变量，当然也可以包含一些简单的运算和逻辑判断-->
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <!--wx:if可以理解为vue当中的v-if-->
+  <view wx:if="{{weather.location}}" class="weather">
+    <text class="city">{{weather.location.name}}</text>
+    <text class="condition">{{weather.now.text}}</text>
+    <text class="temp">{{weather.now.temperature}} ℃</text>
+  </view>
+</view>
