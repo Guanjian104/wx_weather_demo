@@ -1,0 +1,1 @@
+It is use to test "git add".
